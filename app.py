@@ -58,13 +58,19 @@ def home():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    error = None
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
                 return redirect(url_for('dashboard'))
-    return render_template('login.html', form=form)
+            else:
+                error = "Incorrect password"
+        else:
+            error = "That user does not exist"
+
+    return render_template('login.html', form=form, error=error)
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])

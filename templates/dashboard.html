@@ -1,15 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"/>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
 </head>
-<body>
-<h1>Hello you are logged in.</h1>
-<a href="{{ url_for('logout')}}">Press here to logout</a>
+<body class = center>
+<h1>Welcome to your dashboard</h1>
+
+<button class = buttonStyle>Start new workout</button>
+<button class = buttonStyle>View previous workouts</button>
+
+<br></br>
+
+<a  id = logout href="{{ url_for('logout')}}">Press here to logout</a>
+
 
 </body>
 </html>

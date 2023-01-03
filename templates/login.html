@@ -1,17 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
 </head>
-<body>
+<body  class = center>
     <h1>Login page</h1>
+    {% if error is not none %}
+        <h3>{{ error }}</h3>
+    {% endif %}
 
 
-    <form method="POST" action="">
+    <form method="POST" action="" id = RegisterLoginForm class = center>
         {{ form.hidden_tag() }}
         {{ form.username }}
         {{ form.password }}
@@ -20,6 +24,6 @@
     </form>
 
 
-    <a href="{{url_for('register')}}">Don't have and account? Sign up.</a>
+    <a id = dontHaveAccountButton href="{{url_for('register')}}">Don't have and account? Sign up.</a>
 </body>
 </html>

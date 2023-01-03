@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #222222;
+    overflow: hidden;
+    color: whitesmoke;
+
+}
+
+#dontHaveAccountButton{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.buttonStyle{
+ text-decoration: none;
+}
+
+input{
+    border: 10px lightblue;
+    color: #7777ff;
+
+}
+
+#RegisterLoginForm{
+  color: red;
+
+  border: 10px lightblue;
+}

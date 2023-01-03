@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='home.css') }}"/>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
 </head>
-<body>
-    <h1>Home page!</h1>
-    <a href="{{url_for('login')}}">Login Page</a><br>
-    <a href="{{url_for('register')}}">Register Page</a><br>
+<body class = center>
+    <h1 class = button-85>Home Page</h1>
+    <form action="{{url_for('login')}}">
+    <input class = buttonStyle type="submit" value="Login Page" />
+    </form>
+    <form action="{{url_for('register')}}">
+    <input class = buttonStyle type="submit" value="Register Page" />
+    </form>
+
 </body>
 </html>
